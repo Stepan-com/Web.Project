@@ -1,0 +1,112 @@
+﻿@model Mondy.Domain.Entities.Product
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<section>
+    <div class="container">
+        <br />
+        <br />
+        <div class="row">
+            <div class="col">
+                <h3>Are you sure you want to delete this?</h3>
+                <div>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Title)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Title)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Category)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Category)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Image)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Image)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Created)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Created)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Acid)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Acid)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.pH)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.pH)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Alcohol)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Alcohol)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Notes)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Notes)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.PricePerUnit)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.PricePerUnit)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Unit)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Unit)
+                        </dd>
+
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Delete" class="btn site-btn" />
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Mondy.Domain.Entities.Product>
+
+@{
+    ViewBag.Title = "Products";
+}
+
+<div class="page_container">
+<h2>Products</h2>
+
+<p>
+    @Html.ActionLink("Back", "", "admin") |
+    @Html.ActionLink("Create New", "createproduct")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Created)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PricePerUnit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Unit)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Created)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PricePerUnit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Unit)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "details", "product", new { id = item.Id }, new { }) |
+            @Html.ActionLink("Edit", "editproduct", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "deleteproduct", new { id = item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+</div>

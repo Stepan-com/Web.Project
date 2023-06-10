@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Mondy.Domain.Entities.Product>
+
+<!-- Search Result Section end -->
+<section class="search-result-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="search-results">
+                <div class="row product_grid">
+
+                    @foreach (var wine in Model)
+                     {
+                         @Html.Partial("../Shared/_WineCard", wine)
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Search Result Section end -->

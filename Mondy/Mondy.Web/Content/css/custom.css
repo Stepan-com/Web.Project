@@ -1,0 +1,74 @@
+﻿.page_container {
+    max-width: 1000px;
+    padding: 100px 0;
+    margin: 0 auto;
+}
+
+.user_header_profile {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #CCC;
+    text-align: left;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    height: 100%;
+    align-items: center;
+}
+
+.user_header_profile > div:nth-child(1) {
+    font-size: 16px;
+    color: white;
+}
+
+.user_header_profile a {
+    font-size: 14px;
+}
+
+.header-section {
+    height: 120px;
+    position: static;
+}
+
+.hero-section {
+    padding-top: 200px;
+}
+
+.pi-image {
+    height: 200px;
+}
+
+.pi-image img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+    overflow: hidden;
+}
+
+.property-item .pi-meta {
+    margin-bottom: 0;
+}
+
+.sp-image {
+    height: 300px;
+}
+
+.sp-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    overflow: hidden;
+}
+
+.product_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}

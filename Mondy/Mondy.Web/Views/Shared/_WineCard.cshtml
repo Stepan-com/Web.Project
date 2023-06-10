@@ -1,0 +1,15 @@
+﻿@model Mondy.Domain.Entities.Product
+
+<div class="property-item">
+    <div class="pi-image">
+        <img src="@Model.Image" alt="">
+    </div>
+    <h4>@Model.Title</h4>
+    <h5>$@Model.PricePerUnit <small>/ @Model.Unit</small></h5>
+    <div class="pi-metas">
+        <div class="pi-meta">pH: @Model.pH</div>
+        <div class="pi-meta">Alcohol: @Model.Alcohol%</div>
+    </div>
+
+    @Html.ActionLink("Find out more", "details", "product", new { id = Model.Id }, new { @class = "readmore-btn" })
+</div>

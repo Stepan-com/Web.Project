@@ -1,0 +1,43 @@
+﻿@model Mondy.Domain.Entities.Product
+@using Mondy.Web.Extensions
+
+<!-- Single Property Section end -->
+<section class="single-property-section spad">
+    <div class="container">
+        <div class="single-property">
+            <div class="sp-image">
+                <img src="@Model.Image" alt="">
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="property-header">
+                        <h3>@Model.Title</h3>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-left text-lg-right">
+                    <div class="property-header">
+                        <h3>$@Model.PricePerUnit <small>/ @Model.Unit</small></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="property-info-bar">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="pi-metas">
+                            <div class="pi-meta">Acid: @Model.Acid%</div>
+                            <div class="pi-meta">pH: @Model.pH</div>
+                            <div class="pi-meta">Alcohol: @Model.Alcohol%</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 text-left text-lg-right">
+                        <a href="#" class="offer-btn">Buy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="property-text">
+                <h4>Notes</h4>
+                <p>@Model.Notes</p>
+            </div>
+    </div>
+</section>
+<!--  Section end -->

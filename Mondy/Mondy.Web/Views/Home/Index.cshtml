@@ -1,0 +1,87 @@
+﻿@model Mondy.Web.Models.HomePageView
+
+<!-- Intro Section end -->
+<section class="intro-section spad">
+    <div class="container">
+        <div class="section-title">
+            <h2>A TASTE OF SUNSHINE</h2>
+        </div>
+        <div class="row intro-first">
+            <div class="col-lg-6 order-lg-2">
+                <img src="https://marvel-b1-cdn.bc0a.com/f00000000255487/www.sutterhome.com/wp-content/uploads/2023/01/SHW_JAN_2023_HEADER.jpg" alt="">
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="about-text">
+                    <h3>Explore Our Vast Collection</h3>
+                    <p>Savor an impressive selection of reds, whites, rosés, and sparkling wines meticulously sourced from renowned vineyards worldwide. From rich Bordeaux blends to crisp Chardonnays, we have something to suit every palate and occasion.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="https://marvel-b1-cdn.bc0a.com/f00000000255487/www.sutterhome.com/wp-content/uploads/2023/01/SHW_JAN_2023_WOM.jpg" alt="">
+            </div>
+            <div class="col-lg-6 ">
+                <div class="about-text">
+                    <h3>Unleash Your Inner Connoisseur</h3>
+                    <p>Immerse yourself in a world of expertly curated wines, crafted by passionate winemakers with a dedication to excellence. Discover hidden gems and sought-after vintages, empowering you to expand your wine knowledge and appreciation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Intro Section end -->
+
+<!-- Property Section -->
+<section class="property-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Recently Add Wines</h2>
+        </div>
+        <div class="row">
+            @foreach (var wine in Model.RecentlyAdded)
+            {
+                <div class="col-lg-4">
+                    @Html.Partial("../Shared/_WineCard", wine)
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- Property Section end -->
+<!-- Loan Section end -->
+<section class="loan-section">
+    <div class="loan-warp">
+        <div class="container">
+            <div class="section-title text-white">
+                <h2>See If You Qualify for a Free Wine</h2>
+                <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti. Ut gravida mattis magna, non varius lorem sodales nec. In libero orci, ornare non nisl a, auctor euismod purus. Morbi pretium interdum vestibulum. Fusce nec eleifend ipsum. Sed non blandit tellus. </p>
+            </div>
+            <form class="loan-form">
+                <input type="text" placeholder="Your income">
+                <input type="text" placeholder="Amount of wine bottles needed">
+                <button class="site-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- Loan Section end -->
+<!-- Stories Section end -->
+<section class="stories-section spad">
+    <div class="container">
+        <div class="row ">
+            <div class="col-lg-5 order-lg-2">
+                <img class="w-100" src="https://marvel-b1-cdn.bc0a.com/f00000000255487/www.sutterhome.com/wp-content/uploads/2023/01/SHW_JAN_2023_GameDay.jpg" alt="">
+            </div>
+            <div class="col-lg-7 order-lg-1">
+                <div class="about-text">
+                    <h2>Shop with Confidence</h2>
+                    <p>
+                        Rest assured that your satisfaction and security are our top priorities. We offer a seamless and secure shopping experience, backed by our commitment to exceptional customer service. Your personal information is safeguarded, and our dedicated team is here to assist you every step of the way.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Stories Section end -->

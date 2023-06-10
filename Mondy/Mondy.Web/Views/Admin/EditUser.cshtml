@@ -1,0 +1,59 @@
+﻿@model Mondy.Domain.Entities.User
+
+@{
+    ViewBag.Title = "EditUser";
+}
+
+<div class="page_container">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Edit @Model.Name</h4>
+            @Html.ActionLink("Back", "users", "admin")
+            <hr />
+
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email)
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name)
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Avatar)
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Avatar, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Avatar)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Role)
+                <div class="col-md-10">
+                    @Html.EnumDropDownListFor(model => model.Role, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Role)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn site-btn" />
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,55 @@
+﻿@using Mondy.Web.Extensions
+
+<!-- Header Section -->
+<header class="header-section">
+    <a href="@Url.Action("", "")" class="site-logo">
+        <img src="/content/img/logo.png" alt="">
+    </a>
+    <nav class="header-nav">
+        <ul class="main-menu">
+            <li>
+                @Html.ActionLink("Home", "", "")
+            </li>
+            <li>
+                @Html.ActionLink("All Wines", "all", "product")
+            </li>
+            <li>
+                <a href="#">Wine Categories</a>
+                <ul class="sub-menu">
+                    <li><a href="/product/collection/Red">Red</a></li>
+                    <li><a href="/product/collection/White">White</a></li>
+                    <li><a href="/product/collection/Pink">Pink</a></li>
+                    <li><a href="/product/collection/Wine Cocktails">Wine Cocktails</a></li>
+                    <li><a href="/product/collection/Fruit Infusions">Fruit Infusions</a></li>
+                    <li><a href="/product/collection/Limited Release">Limited Release</a></li>
+                    <li><a href="/product/collection/Merchandise">Merchandise</a></li>
+                    <li><a href="/product/collection/E-Gift Cards">E-Gift Cards</a></li>
+                </ul>
+            </li>
+            <li><a href="/about">Abous Us</a></li>
+            @if (Session.UserHasRole(Mondy.Domain.Entities.UserRole.Admin))
+            {
+                <li><a href="/admin">Admin</a></li>
+            }
+        </ul>
+        <div class="header-right">
+            <div class="user-panel">
+
+                @if (Session.IsUserLoggedIn())
+                {
+                    <div class="user_header_profile">
+                        <div>@Session.GetUser().Name</div>
+                        <div>Role: @Session.GetUser().Role</div>
+                        <div>@Html.ActionLink("Logout", "Logout", "Auth") »</div>
+                    </div>
+                }
+                else
+                {
+                    @Html.ActionLink("Sign in", "login", "auth", new { }, new { @class = "login" })
+                    @Html.ActionLink("Join us", "register", "auth", new { }, new { @class = "register" })
+                }
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- Header Section end -->
